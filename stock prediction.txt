@@ -1,0 +1,30 @@
+import pandas as pd
+import numpy as np
+from sklearn.linear_model import LinearRegression
+df = pd.read_csv("C:/Users/PRAVEEN/Downloads/stockss_predictions.csv")
+data= {
+    "Current_Price": [100,105,110,120,130],
+    "Future_Price": [130,135,140,150,160]
+  }
+df= pd.DataFrame(data)
+
+X= df[["Current_Price"]]
+y=df["Future_Price"]
+
+model= LinearRegression()
+model.fit(X,y)  # y = x+30
+
+new_price = pd.DataFrame([[125]], columns=["Current_Price"])
+predictions= model.predict(new_price)
+
+print(predictions)
+
+m=model.coef_[0]
+c=model.intercept_
+print(f"Relationship: Future Price ={m:.2f} * Current Price + {c:.2f}")
+
+
+
+
+[155.]
+Relationship: Future Price =1.00 * Current Price + 30.00
