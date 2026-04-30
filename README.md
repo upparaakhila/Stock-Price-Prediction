@@ -123,7 +123,7 @@ This project shows how machine learning can be used to predict stock prices usin
 
 ## 👨‍💻 Author
 
-**Ruthu Devaraj Poojary**
+**Akhila2426**
 
 ---
 
